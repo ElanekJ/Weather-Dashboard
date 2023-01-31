@@ -9,3 +9,8 @@
 .btn{
     background-color:rgb(20, 113, 235);
 }
+
+section#forrecast{
+    background-color: blue;
+    color: white;
+}
