@@ -6,11 +6,17 @@
     flex-direction: column;
 }
 
-.btn{
-    background-color:rgb(20, 113, 235);
+.iga{
+    margin-top: 5px;
+    
+}
+.btnS{
+    background-color:rgb(91, 151, 230);
+    
 }
 
-section#forrecast{
-    background-color: blue;
+
+.card-color{
+    background-color: rgb(26, 26, 65);
     color: white;
 }

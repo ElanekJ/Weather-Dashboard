@@ -1,3 +1,6 @@
+ let inputEl = document.querySelector("#search-input")
+ 
+ let cityEl = "London";
  //Set ready website 
 $(document).ready(function() {
 
@@ -9,6 +12,10 @@ $(document).ready(function() {
         cityBtn.addClass("city-button city-button-color");
         cityBtn.text(cities[i]);
         $("#history").append(cityBtn);
+    }
+
+    if(localStorage.getItem("City") === null){
+        localStorage.setItem("City" , cityEl);
     }
 
         
@@ -23,7 +30,9 @@ $(document).ready(function() {
     // listening function
     $("button").click(function(event){
 
-        let cityEl = event.target.textContent;
+       
+        console.log(inputEl.value)
+        cityEl = event.target.textContent;
         
        
 
@@ -38,8 +47,6 @@ $(document).ready(function() {
         .then(citiesFound => {
 
             let firstCity = citiesFound[0];
-            console.log(firstCity.lat);
-            console.log(firstCity.lon);
 
             return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${firstCity.lat}&lon=${firstCity.lon}&appid=566a2801aa6d2ed7467b0b0d21c0d5c2${choseUnit}`)
         })
